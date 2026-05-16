@@ -1,0 +1,61 @@
+name: Change request
+description: Track planned engineering or product work with clear acceptance and rollout notes.
+title: "[Change]: "
+body:
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options:
+        - flipxer-web-app
+        - flipxer-web-services
+        - both
+        - other / unsure
+    validations:
+      required: true
+
+  - type: input
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem are we trying to solve?
+      placeholder: State the current gap or friction clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the proposed implementation or product behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List the conditions that make this work complete.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link tickets, incidents, cross-repo PRs, or deploy ordering requirements.
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: What focused tests, browser checks, Docker checks, or smoke tests should prove this change?
+
+  - type: textarea
+    id: release
+    attributes:
+      label: Release / rollout considerations
+      description: Note migrations, feature flags, env vars, queue impacts, or phased rollout needs.

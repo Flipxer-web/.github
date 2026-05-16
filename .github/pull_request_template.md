@@ -1,23 +1,35 @@
 ## Summary
-- Briefly describe the change.
-- Explain the user-facing or system impact.
+- Describe the change in plain language.
+- Call out the user-facing, operational, or data impact.
 
-## Related
+## Scope
+- List the main flows, services, or files touched.
+- Note anything intentionally left out of this PR.
+
+## Dependencies
 - Link the issue, incident, or ticket.
-- Reference any dependent PRs.
+- Link related PRs and note required merge or deploy order across repos.
 
-## Testing
-- Describe the checks you ran.
-- Include any manual verification steps.
+## Testing / Validation
+- List the focused automated checks you ran.
+- List manual validation steps, including browser, Docker, or end-to-end checks when relevant.
+- If validation happened on a different worktree or validated source branch, say so explicitly.
 
-## Risks
-- Note rollout risks, migrations, or feature-flag considerations.
-- Call out anything reviewers should pay close attention to.
+## Release / Rollout
+- Note feature flags, env var changes, migrations, queue or webhook impacts, and cache implications.
+- If this change depends on backend-before-frontend or frontend-before-backend rollout, state it clearly.
+- If this is a release promotion, list included PRs and whether validation is being carried forward from `develop`.
+
+## Risks / Review Focus
+- Call out the highest-risk paths, rollback concerns, or anything reviewers should inspect closely.
+- Note any follow-up work that is intentionally deferred.
 
 ## Screenshots
-- Add screenshots or recordings when the change affects UI behavior.
+- Attach screenshots or recordings for UI changes.
 
 ## Checklist
-- [ ] I verified the change locally.
-- [ ] I updated tests or explained why they were not needed.
-- [ ] I documented follow-up work, if any.
+- [ ] I verified the change locally or referenced the validated branch/checks.
+- [ ] I added or updated focused tests, or explained why they were not needed.
+- [ ] I documented dependencies, deploy order, and rollout considerations.
+- [ ] I called out risks, review hotspots, and follow-up work.
+- [ ] I attached screenshots or recordings for UI changes, if applicable.

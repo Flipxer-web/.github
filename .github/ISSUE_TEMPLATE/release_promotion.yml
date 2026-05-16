@@ -1,0 +1,68 @@
+name: Release promotion
+description: Track a develop-to-production release or coordinated rollout.
+title: "[Release]: "
+body:
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options:
+        - flipxer-web-app
+        - flipxer-web-services
+        - both
+        - other / unsure
+    validations:
+      required: true
+
+  - type: input
+    id: source-branch
+    attributes:
+      label: Source branch
+      placeholder: develop
+    validations:
+      required: true
+
+  - type: input
+    id: target-branch
+    attributes:
+      label: Target branch
+      placeholder: production
+    validations:
+      required: true
+
+  - type: textarea
+    id: included-work
+    attributes:
+      label: Included work
+      description: List the PRs or changes that this release is intended to carry.
+      placeholder: |
+        - PR #...
+        - PR #...
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation evidence
+      description: Capture carried-forward develop checks and any release-specific smoke validation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollout
+    attributes:
+      label: Rollout notes
+      description: Note deploy order across repos, env changes, migrations, feature flags, queue impacts, webhooks, or cache clears.
+
+  - type: textarea
+    id: blockers
+    attributes:
+      label: Blockers or risks
+      description: Call out anything that could delay or complicate the promotion.
+
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback plan
+      description: Describe how this release would be backed out if needed.
